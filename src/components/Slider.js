@@ -13,6 +13,7 @@ function Slider() {
             setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
           }
         }
+        // setInterval(handleClick,5000);
   return (
     <div className='d-flex con'>
       <div className="arrow" direction="left" style={{left:"10px"}} onClick={()=>{handleClick("left")}} >
@@ -20,7 +21,7 @@ function Slider() {
       </div>
       <div className="slideitem" style={{transform:`translateX(${slideIndex* -100}vw)`}}>
       {sliderItems.map((item) => (<>
-      <div className="slide" style={{backgroundColor:`${item.bg}`}}>
+      <div className="slide" style={{backgroundColor:`${item.bg}`}} key={item.id}>
           <div className="imgcont">
               <img src={item.img} class="image" alt="..."></img>
           </div>
